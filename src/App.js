@@ -14,13 +14,11 @@ function App() {
         <div className="app__body">
           <Sidebar />
           <Switch>
-            <Route path="/">
-              <Mail />
-              <EmailList />
-
-            </Route>
             <Route path="/mail">
-
+              <Mail />
+            </Route>
+            <Route path="/">
+              <EmailList />
             </Route>
           </Switch>
         </div>
