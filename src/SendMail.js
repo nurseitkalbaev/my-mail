@@ -10,6 +10,7 @@ import firebase from "firebase";
 
 function SendMail() {
   const { register, handleSubmit, watch, errors } = useForm();
+  const dispatch = useDispatch();
 
   const onSubmit = (formData) => {
     console.log(formData);
@@ -19,8 +20,9 @@ function SendMail() {
       message: formData.message,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
+
+    dispatch(closeSendMessage());
   };
-  const dispatch = useDispatch();
   return (
     <div className="sendMail">
       <div className="sendMail__header">
